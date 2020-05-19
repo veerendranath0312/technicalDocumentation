@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Side Navbar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Navbar */
+        nav {
+            flex-basis: 23%;
+            background-color: #eee;
+            border-right: 4px solid #666;
+            flex: 1 0 auto;
+            overflow-y: scroll;
+        }
+
+        #navbar ul {
+            list-style: none;
+        }
+        #navbar ul li {
+            padding: 15px 35px;
+            border-bottom: 1px solid #333;
+        }
+        #navbar ul li:hover {
+            background: #ddd;
+        }
+        #navbar a {
+            text-decoration: none;
+            color: #333; 
+            font-weight: bold;                   
+        }
+
+        /* Main Content */
+        main {
+            flex-basis: 77%;
+            padding: 35px 40px;
+            overflow-y: scroll;
+        }
+
+        .h2 {
+            margin: 15px;
+            text-align: center;
+        }
+        span {
+            background: black;
+            color: white;
+            padding: 3px 5px;
+            border-radius: 5px;
+
+        }
+        header {
+            font-size: 23px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            padding-left: 25px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .items {
+            padding-left: 50px;
+            margin-bottom: 15px;
+        }
+        .items li {
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        h3 {
+            margin-bottom: 15px;
+        }
+
+        .code {
+            background: #ddd;
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #666;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        table {
+            border: 1px solid #333;
+            padding: 0 7px;
+        }
+
+        tr:nth-child(even) {
+            background: #eee;
+        }
+        @media(max-width: 768px) {
+            .container {
+                display: block;
+            }
+
+            nav {
+                height: 30%;
+                border-right: none;
+                border-bottom: 4px solid #666;
+            }
+
+            .content {
+                padding-left: 20px;
+            }
+
+            .items {
+                padding-left: 40px;
+            }
+            table {
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav id="navbar">
+            <header class="h2"><span>Python</span> Documentation</header>
+            <ul>
+                <li><a class="nav-link" href="#Introduction_to_Python">Introduction to Python</a></li>
+                <li><a class="nav-link" href="#Keywords_and_Identifiers">Keywords and Identifiers</a></li>
+                <li><a class="nav-link" href="#Statements_&_Comments">Statements & Comments</a></li>
+                <li><a class="nav-link" href="#Python_Variables">Python Variables</a></li>
+                <li><a class="nav-link" href="#Python_Datatypes">Python Datatypes</a></li>
+                <li><a class="nav-link" href="#Python_Operators">Python Operators</a></li>
+                <li><a class="nav-link" href="#Type_Conversion">Type Conversion</a></li>
+                <li><a class="nav-link" href="#Python_I/O">Python I/O</a></li>
+                <li><a class="nav-link" href="#Python_if...else">Python if...else</a></li>
+                <li><a class="nav-link" href="#Python_for_loop">Python for loop</a></li>
+                <li><a class="nav-link" href="#Python_while_loop">Python while loop</a></li>
+                <li><a class="nav-link" href="#Python_break_&_continue">Python break & continue</a></li>
+                <li><a class="nav-link" href="#Python_pass_keyword">Python pass keyword</a></li>
+                <li><a class="nav-link" href="#References">References</a></li>
+            </ul>
+        </nav>
+    
+        <main id="main-doc">
+            <section class="main-section" id="Introduction_to_Python">
+                <header>Introduction to Python</header>
+                <div class="content">
+                    <p>Python is a cross-platform programming language, which means that it can run on multiple platforms like Windows, macOS, Linux, and has even been ported to the Java and .NET virtual machines. It is free and open-source.</p>
+                    <p>Even though most of today's Linux and Mac have Python pre-installed in it, the version might be out-of-date. So, it is always a good idea to install the most current version.</p>
+                    <p>The main features of python are listed below:</p>
+                    <div class="items">
+                        <ul>
+                            <li>Easy to Learn and Use</li>
+                            <li>Expressive Language</li>
+                            <li>Interpreted Language</li>
+                            <li>Cross-platform Language</li>
+                            <li>Object-Oriented Language</li>
+                            <li>Large Standard Library</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+    
+            <section id="Keywords_and_Identifiers" class="main-section">
+                <header>Keywords and Identifiers</header>
+                <div class="content">
+                    <h3>Keywords</h3>
+                    <p>Keywords are the reserved words in Python.</p>
+                    <p>We cannot use a keyword as a variable name, function name or any other identifier. They are used to define the syntax and structure of the Python language.</p>
+                    <p>In Python, keywords are case sensitive.</p>
+                    <p>There are 33 keywords in Python 3.7. This number can vary slightly over the course of time.</p>
+                    <p>All the keywords except True, False and None are in lowercase and they must be written as they are. The list of all the keywords is given below.</p>
+                    <table>
+                        <tr>
+                            <td>False</td>
+                            <td>await</td>
+                            <td>else</td>
+                            <td>import</td>
+                        </tr>
+                        <tr>
+                            <td>None</td>
+                            <td>break</td>
+                            <td>except</td>
+                            <td>in</td>
+                        </tr>
+                        <tr>
+                            <td>True</td>
+                            <td>class</td>
+                            <td>finally</td>
+                            <td>is</td>
+                        </tr>
+                        <tr>
+                            <td>and</td>
+                            <td>continue</td>
+                            <td>for</td>
+                            <td>lambda</td>
+                        </tr>
+                        <tr>
+                            <td>as</td>
+                            <td>def</td>
+                            <td>from</td>
+                            <td>nonlocal</td>
+                        </tr>
+                        <tr>
+                            <td>assert</td>
+                            <td>del</td>
+                            <td>global</td>
+                            <td>not</td>
+                        </tr>
+                        <tr>
+                            <td>async</td>
+                            <td>elif</td>
+                            <td>if</td>
+                            <td>or</td>
+                        </tr>
+                        <tr>
+                            <td>pass</td>
+                            <td>raise</td>
+                            <td>return</td>
+                            <td>try</td>
+                        </tr>
+                        <tr>
+                            <td>while</td>
+                            <td>with</td>
+                            <td>yeild</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <p>Looking at all the keywords at once and trying to figure out what they mean might be overwhelming.</p>
+                    <h3>Itendifiers</h3>
+                    <p>An identifier is a name given to entities like class, functions, variables, etc. It helps to differentiate one entity from another.</p>
+                    <p>Rules for the identifiers</p>
+                    <div class="items">
+                        <ol>
+                            <li>Identifiers can be a combination of letters in lowercase (a to z) or uppercase (A to Z) or digits (0 to 9) or an underscore _. Names like myClass, var_1 and print_this_to_screen, all are valid example.</li>
+                            <li>An identifier cannot start with a digit. 1variable is invalid, but variable1 is a valid name.</li>
+                            <li>Keywords cannot be used as identifiers.</li>
+                            <li>We cannot use special symbols like !, @, #, $, % etc. in our identifier.</li>
+                            <li>An identifier can be of any length.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+    
+            <section id="Statements_&_Comments" class="main-section">
+                <header>Statements & Comments</header>
+                <div class="content">
+                    <h3>Statements</h3>
+                    <p>Instructions that a Python interpreter can execute are called statements. For example, a = 1 is an assignment statement. if statement, for statement, while statement, etc. are other kinds of statements which will be discussed later.</p>
+                    <h3>Multiline statements</h3>
+                    <p>In Python, the end of a statement is marked by a newline character. But we can make a statement extend over multiple lines with the line continuation character (\). For example:</p>
+                    <div class="code">
+                        <code>
+                            a = 1 + 2 + 3 + \<br>
+                               4 + 5 + 6 + \<br>
+                               7 + 8 + 9
+                        </code>
+                    </div>
+                    <h3>Python Indentation</h3>
+                    <p>Most of the programming languages like C, C++, and Java use braces { } to define a block of code. Python, however, uses indentation.</p>
+                    <p>A code block (body of a function, loop, etc.) starts with indentation and ends with the first unindented line. The amount of indentation is up to you, but it must be consistent throughout that block.</p>
+                    <p>Generally, four whitespaces are used for indentation and are preferred over tabs. Here is an example.</p>
+                    <div class="code">
+                        <code>
+                            for i in range(1,11): <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;print(i) <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if i == 5: <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break
+                        </code>
+                    </div>
+                    <h3>Comments</h3>
+                    <p>In Python, we use the hash (#) symbol to start writing a comment.</p>
+                    <p>It extends up to the newline character. Comments are for programmers to better understand a program. Python Interpreter ignores comments.</p>
+                    <div class="code">
+                        <code>
+                            #This is a comment <br>
+                            #print out Hello <br>
+                            print('Hello')
+                        </code>
+                    </div>
+                    <p>These triple quotes are generally used for multi-line strings. But they can be used as a multi-line comment as well. Unless they are not docstrings, they do not generate any extra code.</p>
+                    <div class="code">
+                        <code>
+                            """This is also a <br>
+                            perfect example of <br>
+                            multi-line comments"""
+                        </code>
+                    </div>
+                </div>
+            </section>
+    
+            <section id="Python_Variables" class="main-section">
+                <header>Python Variables</header>
+                <div class="content">
+                    <p>A variable is a named location used to store data in the memory. It is helpful to think of variables as a container that holds data that can be changed later in the program. For example,</p>
+                    <div class="code">
+                        <code>number = 10</code>
+                    </div>
+                    <p>Here, we have created a variable named number. We have assigned the value 10 to the variable.</p>
+                    <p>You can think of variables as a bag to store books in it and that book can be replaced at any time.</p>
+                    <div class="code">
+                        <code>
+                            number = 10 <br>
+                            number = 1.1
+                        </code>
+                    </div>
+                    <p>Initially, the value of number was 10. Later, it was changed to 1.1.</p></div>
+            </section>
+    
+            <section id="Python_Datatypes" class="main-section">
+                <header>Python Datatypes</header>
+                <div class="content">
+                    <p>Every value in Python has a datatype. Since everything is an object in Python programming, data types are actually classes and variables are instance (object) of these classes.</p>
+                    <h3>Numbers in python</h3>
+                    <p>Integers, floating point numbers and complex numbers fall under Python numbers category. They are defined as int, float and complex classes in Python.</p>
+                    <p>We can use the type() function to know which class a variable or a value belongs to. Similarly, the isinstance() function is used to check if an object belongs to a particular class.</p>
+                    <div class="code">
+                        <code>
+                            a = 5 <br>
+                            print(a, "is of type", type(a)) <br>
+                            
+                            a = 2.0 <br>
+                            print(a, "is of type", type(a)) <br>
+                            
+                            a = 1+2j <br>
+                            print(a, "is complex number?", isinstance(1+2j,complex)) <br>
+                        </code>
+                    </div>
+                    <p>Output</p>
+                    <div class="code">
+                        <code>
+                            5 is of type <class 'int'> <br>
+                            2.0 is of type <class 'float'> <br>
+                            (1+2j) is complex number? True</code>
+                    </div>
+                    <p>Integers can be of any length, it is only limited by the memory available.</p>
+                    <p>A floating-point number is accurate up to 15 decimal places. Integer and floating points are separated by decimal points. 1 is an integer, 1.0 is a floating-point number.</p>
+                    <p>Complex numbers are written in the form, x + yj, where x is the real part and y is the imaginary part. Here are some examples.</p>
+                    <div class="code">
+                        <code>
+                            >>> a = 1234567890123456789 <br>
+                            >>> a <br>
+                            1234567890123456789 <br>
+                            >>> b = 0.1234567890123456789 <br>
+                            >>> b <br>
+                            0.12345678901234568 <br>
+                            >>> c = 1+2j <br>
+                            >>> c <br>
+                            (1+2j)
+                        </code>
+                    </div>
+                    <p>Notice that the float variable b got truncated.</p>
+                </div>
+            </section>
+    
+            <section id="Python_Operators" class="main-section">
+                <header>Python Operators</header>
+                <div class="content">
+                    <h3>What are operators in python ?</h3>
+                <p>Operators are special symbols in Python that carry out arithmetic or logical computation. The value that the operator operates on is called the operand. For example:</p>
+                <div class="code">
+                    <code>
+                        >>> 2+3 <br>
+                        5
+                    </code>
+                </div>
+                <p>Types of operators in python</p>
+                <div class="items">
+                    <ul>
+                        <li>Arithmetic operators</li>
+                        <li>Logical operators</li>
+                        <li>Comparision operators</li>
+                        <li>Bitwise operators</li>
+                    </ul>
+                </div>
+                <p>Here, + is the operator that performs addition. 2 and 3 are the operands and 5 is the output of the operation.</p>
+                <h3>Arithmetic operators</h3>
+                <p>Arithmetic operators are used to perform mathematical operations like addition, subtraction, multiplication, etc.</p>
+                <div class="code">
+                    <code>
+                        +  --> Addition <br>
+                        -  --> Subtraction <br>
+                        *  --> Multiplication <br>
+                        /  --> Floating point division <br>
+                        // --> Integer division <br>
+                        %  --> Modulus
+                    </code>
+                </div>
+                <p>Examples</p>
+                <div class="code">
+                    <code>
+                        x = 15 <br>
+                        y = 4 <br>
+                        <br>
+                        # Output: x + y = 19 <br>
+                        print('x + y =',x+y) <br>
+                        <br>
+                        # Output: x - y = 11 <br>
+                        print('x - y =',x-y) <br>
+                        <br>
+                        # Output: x * y = 60 <br>
+                        print('x * y =',x*y) <br>
+                        <br>
+                        # Output: x / y = 3.75 <br>
+                        print('x / y =',x/y) <br>
+                        <br>
+                        # Output: x // y = 3 <br>
+                        print('x // y =',x//y) <br>
+                        <br>
+                        # Output: x ** y = 50625 <br>
+                        print('x ** y =',x**y)</code>
+                </div>
+                <h3>Comparison operators</h3>
+                <p>Comparison operators are used to compare values. It returns either True or False according to the condition.</p>
+                <div class="code">
+                    <code>
+                        >   -->  greater than <br>
+                        <   -->  less than <br>
+                        >=  -->  greater than or equal to <br>
+                        <=  -->  less than or equal to <br>
+                        ==  -->  equals to <br>
+                        !=  --> not equals to <br>
+                    </code>
+                </div>
+                <h3>Logical operators</h3>
+                <p>Logical operators are the and, or, not operators.</p>
+                <div class="code">
+                    <code>
+                        and	  --    True if both the operands are true  <br>
+                        or	  --   True if either of the operands is true <br>
+                        not	  --   True if operand is false (complements the operand)	 
+                    </code>
+                </div>
+                </div>
+            </section>
+    
+            <section id="Type_Conversion" class="main-section">
+                <header>Type Conversion</header>
+                <div class="content">
+                    <p>The process of converting the value of one data type (integer, string, float, etc.) to another data type is called type conversion. Python has two types of type conversion.</p>
+                <div class="items">
+                    <ul>
+                        <li>Implicit Type Conversion</li>
+                        <li>Explicit Type Conversion</li>
+                    </ul>
+                </div>
+                <h3>Implicit Type Conversion</h3>
+                <p>In Implicit type conversion, Python automatically converts one data type to another data type. This process doesn't need any user involvement.</p>
+                <p>Let's see an example where Python promotes the conversion of the lower data type (integer) to the higher data type (float) to avoid data loss.</p>
+                <div class="code">
+                    <code>
+                        num_int = 123 <br>
+                        num_flo = 1.23 <br>
+                        <br>
+                        num_new = num_int + num_flo <br>
+                        
+                        print("datatype of num_int:",type(num_int)) <br>
+                        print("datatype of num_flo:",type(num_flo)) <br>
+                        
+                        print("Value of num_new:",num_new) <br>
+                        print("datatype of num_new:",type(num_new))
+                    </code>
+                </div>
+                <p>Output</p>
+                <div class="code">
+                    <code>
+                        datatype of num_int: <class 'int'> <br>
+                            datatype of num_flo: <class 'float'> <br>
+                            <br>
+                            Value of num_new: 124.23 <br>
+                            datatype of num_new: <class 'float'>
+                    </code>
+                </div>
+                <h3>Explicit Type Conversion</h3>
+                <p>In Explicit Type Conversion, users convert the data type of an object to required data type. We use the predefined functions like int(), float(), str(), etc to perform explicit type conversion.</p>
+                <p>This type of conversion is also called typecasting because the user casts (changes) the data type of the objects.</p>
+                <p>Syntax :</p>
+                <div class="code">
+                    <code>&lt;required_datatype&gt;(expression)</code>
+                </div>
+                </div>
+            </section>
+    
+            <section id="Python_I/O" class="main-section">
+                <header>Python I/O</header>
+                <div class="content">
+                    <p>Python provides numerous built-in functions that are readily available to us at the Python prompt.</p>
+                <p>Some of the functions like input() and print() are widely used for standard input and output operations respectively. Let us see the output section first.</p>
+                <h3>Python Output Using print() function</h3>
+                <p>We use the print() function to output data to the standard output device (screen). We can also output data to a file, but this will be discussed later. An example of its use is given below.</p>
+                <div class="code">
+                    <code>print('This sentence is output to the screen') <br> #output: This sentence is output to the screen</code>
+                </div>
+                <h3>Python Input</h3>
+                <p>Up until now, our programs were static. The value of variables was defined or hard coded into the source code. To allow flexibility, we might want to take the input from the user. In Python, we have the input() function to allow this. The syntax for input() is:</p>
+                <div class="code">
+                    <code>
+                        >>> num = input('Enter a number: ') <br>
+                        Enter a number: 10 <br>
+                        >>> num <br>
+                        '10'
+                    </code>
+                </div>
+                </div>
+            </section>
+    
+            <section id="Python_if...else" class="main-section">
+                <header>Python if...else</header>
+                <div class="content">
+                    <h3>What is if...else statement in Python?</h3>
+                <p>Decision making is required when we want to execute a code only if a certain condition is satisfied.</p>
+                <p>The if…elif…else statement is used in Python for decision making.</p>
+                <h3>Python if Statement Syntax</h3>
+                <div class="code">
+                    <code>if test expression: <br>
+                        statement(s)</code>
+                </div>
+                <p>Here, the program evaluates the test expression and will execute statement(s) only if the text expression is True.</p>
+                <p>If the text expression is False, the statement(s) is not executed. In Python, the body of the if statement is indicated by the indentation. Body starts with an indentation and the first unindented line marks the end. Python interprets non-zero values as True. None and 0 are interpreted as False.</p>
+                <h3>Syntax of if...else</h3>
+                <div class="code">
+                    <code>if test expression: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Body of if <br>
+                        else: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Body of else
+                    </code>
+                </div>
+                <h3>Syntax of if...elif...else</h3>
+                <div class="code">
+                    <code>if test expression: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Body of if <br>
+                    elif test expression: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Body of elif <br>
+                    else: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Body of else</code>
+                </div>
+                </div>
+            </section>
+    
+            <section id="Python_for_loop" class="main-section">
+                <header>Python for loop</header>
+                <div class="content">
+                    <h3>What is if...else statement in Python?</h3>
+                <p>Decision making is required when we want to execute a code only if a certain condition is satisfied.</p>
+                <p>The if…elif…else statement is used in Python for decision making.</p>
+                <h3>Python if Statement Syntax</h3>
+                <div class="code">
+                    <code>if test expression: <br>
+                        statement(s)</code>
+                </div>
+                <p>Here, the program evaluates the test expression and will execute statement(s) only if the text expression is True.</p>
+                <p>If the text expression is False, the statement(s) is not executed. In Python, the body of the if statement is indicated by the indentation. Body starts with an indentation and the first unindented line marks the end. Python interprets non-zero values as True. None and 0 are interpreted as False.</p>
+                <h3>Syntax of if...else</h3>
+                <div class="code">
+                    <code>if test expression: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Body of if <br>
+                        else: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Body of else
+                    </code>
+                </div>
+                <h3>Syntax of if...elif...else</h3>
+                <div class="code">
+                    <code>if test expression: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Body of if <br>
+                    elif test expression: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Body of elif <br>
+                    else: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Body of else</code>
+                </div>
+                </div>
+            </section>
+    
+            <section id="Python_while_loop" class="main-section">
+                <header>Python while loop</header>
+                <div class="content">
+                    <h3>What is while loop in Python?</h3>
+                <p>The while loop in Python is used to iterate over a block of code as long as the test expression (condition) is true. We generally use this loop when we don't know the number of times to iterate beforehand.</p>
+                <p>Syntax</p>
+                <div class="code">
+                    <code>while test_expression: <br>
+                        Body of while</code>
+                </div>
+                <p>In the while loop, test expression is checked first. The body of the loop is entered only if the test_expression evaluates to True. After one iteration, the test expression is checked again. This process continues until the test_expression evaluates to False. </p>
+
+                    <p>In Python, the body of the while loop is determined through indentation.
+                    
+                    <p>The body starts with indentation and the first unindented line marks the end.
+                    
+                    <p>Python interprets any non-zero value as True. None and 0 are interpreted as False.</p>
+                </div>
+
+            </section>
+    
+            <section id="Python_break_&_continue" class="main-section">
+                <header>Python break & continue</header>
+                <div class="content">
+                    <h3>What is the use of break and continue in Python?</h3>
+                <p>In Python, break and continue statements can alter the flow of a normal loop.</p>
+                <p>Loops iterate over a block of code until the test expression is false, but sometimes we wish to terminate the current iteration or even the whole loop without checking test expression.</p>
+                <p>The break and continue statements are used in these cases.</p>
+                </div>
+            </section>
+    
+            <section id="Python_pass_keyword" class="main-section">
+                <header>Python pass keyword</header>
+                <div class="content">
+                    <h3>What is pass statement in Python?</h3>
+                <p>In Python programming, the pass statement is a null statement. The difference between a comment and a pass statement in Python is that while the interpreter ignores a comment entirely, pass is not ignored. However, nothing happens when the pass is executed. It results in no operation (NOP).</p>
+                <p>Suppose we have a loop or a function that is not implemented yet, but we want to implement it in the future. They cannot have an empty body. The interpreter would give an error. So, we use the pass statement to construct a body that does nothing.</p>
+                </div>
+            </section>
+            
+            <section class="main-section" id="References">
+                <header>References</header>
+                <div class="content">
+                    <div class="items">
+                        <ul>
+                            <li>All the documentation in this page is taken from Programizz website.</li>
+                            <li><a href="https://www.programiz.com/python-programming" target="_blank">Click here</a> if you want to master in Python</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+    </div>
+</body>
+</html>
